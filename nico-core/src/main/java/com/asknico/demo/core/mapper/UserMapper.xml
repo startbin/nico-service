@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.asknico.demo.core.dao.UserMapper">
+
+	<select id="getUsers" resultType="User">
+		SELECT * FROM an_user LIMIT 10
+	</select>
+
+	<!-- 后台 -->
+	<!-- ************** READ ************** -->
+	<!-- 查询管理用户信息 List<User> list-->
+	<select id="getUserList" resultType="User" parameterType="User">
+		SELECT * FROM an_user
+		LIMIT #{pageEx.pageIndex},#{pageEx.pageSize}
+	</select>
+
+	<!-- 查询管理用户信息 总数  count-->
+	<select id="getUserCount" resultType="int" >
+		SELECT COUNT(1) FROM an_user
+	</select>
+
+	<!-- 单条查询  根据UserID-->
+	<select id="getUserByID" resultType="User" parameterType="int">
+		SELECT * FROM an_user WHERE ID = #{value}
+	</select>
+
+	<!-- 单条查询  根据UserName-->
+	<select id="getUserByUserName" resultType="User" parameterType="String">
+		SELECT * FROM an_user WHERE UserName = #{value}
+	</select>
+
+	<!-- ************** DELETE ************** -->
+	<!-- 单条删除管理用户 -->
+	<delete id="deleteUserByID" parameterType="int">
+		DELETE FROM an_user WHERE ID = #{value}
+	</delete>
+
+
+	<!-- ************** CREATE ************** -->
+	<!-- 新增管理用户 -->
+	<insert id="createUser" parameterType="User" useGeneratedKeys="false">
+		INSERT
+		INTO an_user
+		SET
+		id = #{id}
+		<if test="username != null">,username = #{username}</if>
+		<if test="password != null">,password = #{password}</if>
+		<if test="penname != null">,penname = #{penname}</if>
+		<if test="realname != null">,realname = #{realname}</if>
+		<if test="email != null">,email = #{email}</if>
+		<if test="roleID != null">,roleID = #{roleID}</if>
+		<if test="roleName != null">,roleName = #{roleName}</if>
+		<if test="lastLoginTime != null and lastLoginTime !=''">,lastLoginTime = #{lastLoginTime}</if>
+	</insert>
+
+	<!-- ************** UPDATE ************** -->
+	<!-- 修改管理用户 -->
+	<update id="updateUser" parameterType="User">
+		UPDATE
+		an_user
+		SET
+		id = #{id}
+		<!-- <if test="username != null">,username = #{username}</if> -->
+		<if test="password != null">,password = #{password}</if>
+		<if test="penname != null">,penname = #{penname}</if>
+		<if test="realname != null">,realname = #{realname}</if>
+		<if test="email != null">,email = #{email}</if>
+		<if test="roleID != null">,roleID = #{roleID}</if>
+		<if test="roleName != null">,roleName = #{roleName}</if>
+		<if test="lastLoginTime != null and lastLoginTime !=''">,lastLoginTime = #{lastLoginTime}</if>
+		WHERE
+		id = #{id}
+	</update>
+
+</mapper>

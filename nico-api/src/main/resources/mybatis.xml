@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 配置实体类短别名 -->
+	<typeAliases>
+		<!-- <typeAlias alias="PageEx" type="com.bjdr.model.entities.FuzzyQueryParam"/> 模糊查询参数实体类 -->
+		<typeAlias alias="User" type="com.asknico.demo.model.entities.User"/>
+		<typeAlias alias="Account" type="com.asknico.demo.model.entities.Account"/>
+	</typeAliases>
+
+	<!-- 配置Mapper  -->
+	<mappers>
+		<!--
+        <mapper resource="com/bjdr/core/mapper/UserMapper.xml" />
+        -->
+	</mappers>
+
+</configuration>
