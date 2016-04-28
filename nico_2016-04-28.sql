@@ -34,7 +34,7 @@ CREATE TABLE `an_account` (
   PRIMARY KEY (`id`),
   KEY `an_account_indx_user_id` (`user_id`),
   KEY `an_account_vip` (`is_vip`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='账号表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='账号�?;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,11 +56,11 @@ DROP TABLE IF EXISTS `an_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `an_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  `username` varchar(50) NOT NULL COMMENT '用户名',
+  `username` varchar(50) NOT NULL COMMENT '用户�?,
   `password` varchar(128) NOT NULL COMMENT '密码',
   `full_name` varchar(60) DEFAULT NULL COMMENT '全名',
   `address` varchar(255) DEFAULT NULL COMMENT '地址',
-  `mobile` varchar(20) DEFAULT NULL COMMENT '手机号',
+  `mobile` varchar(20) DEFAULT NULL COMMENT '手机�?,
   `age` int(4) DEFAULT NULL COMMENT '年龄',
   `gender` varchar(10) DEFAULT NULL COMMENT '性别',
   `email` varchar(255) DEFAULT NULL COMMENT '邮箱',
@@ -74,7 +74,7 @@ CREATE TABLE `an_user` (
   KEY `AK_Key_1` (`id`),
   KEY `an_user_mobile_index` (`mobile`),
   KEY `an_user_password_index` (`password`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户�?;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
