@@ -34,7 +34,7 @@ CREATE TABLE `an_account` (
   PRIMARY KEY (`id`),
   KEY `an_account_indx_user_id` (`user_id`),
   KEY `an_account_vip` (`is_vip`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='账号�?;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='账号表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,25 +56,21 @@ DROP TABLE IF EXISTS `an_user`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `an_user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '用户ID',
-  `username` varchar(50) NOT NULL COMMENT '用户�?,
+  `username` varchar(50) NOT NULL COMMENT '用户名',
   `password` varchar(128) NOT NULL COMMENT '密码',
   `full_name` varchar(60) DEFAULT NULL COMMENT '全名',
   `address` varchar(255) DEFAULT NULL COMMENT '地址',
-  `mobile` varchar(20) DEFAULT NULL COMMENT '手机�?,
-  `age` int(4) DEFAULT NULL COMMENT '年龄',
+  `mobile` varchar(20) DEFAULT NULL COMMENT '手机号',
   `gender` varchar(10) DEFAULT NULL COMMENT '性别',
   `email` varchar(255) DEFAULT NULL COMMENT '邮箱',
-  `education` varchar(50) DEFAULT NULL COMMENT '教育程度',
-  `birthday` datetime DEFAULT NULL COMMENT '生日',
-  `postal_code` varchar(15) DEFAULT NULL COMMENT '邮编',
-  `reg_ip` varchar(40) DEFAULT NULL COMMENT '注册IP',
+  `birthday` date DEFAULT NULL COMMENT '生日',
   `account_enabled` bit(1) DEFAULT b'1' COMMENT '是否可用',
   `account_expired` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否过期',
   `account_locked` bit(1) NOT NULL DEFAULT b'0' COMMENT '是否锁定',
   KEY `AK_Key_1` (`id`),
   KEY `an_user_mobile_index` (`mobile`),
   KEY `an_user_password_index` (`password`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户�?;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,6 +79,7 @@ CREATE TABLE `an_user` (
 
 LOCK TABLES `an_user` WRITE;
 /*!40000 ALTER TABLE `an_user` DISABLE KEYS */;
+INSERT INTO `an_user` VALUES (1,'Evil','123456','Evil Villian','Chicago','93820190','F','evil_villian@gmail.com','1988-04-01','','\0','\0');
 /*!40000 ALTER TABLE `an_user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -95,4 +92,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-28 14:19:24
+-- Dump completed on 2016-04-29 18:08:43
