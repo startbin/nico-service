@@ -120,11 +120,11 @@
             <scope>provided</scope>
         </dependency>
         <!-- 导入java ee jar 包 -->
-        <dependency>
+        <!-- <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
-        </dependency>
+        </dependency> -->
 
         <!-- 导入dbcp的jar包，用来在applicationContext.xml中配置数据库 -->
         <dependency>

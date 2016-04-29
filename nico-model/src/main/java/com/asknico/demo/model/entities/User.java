@@ -19,17 +19,12 @@ public class User implements Serializable{
 	private String fullName; // 全名
 	private String address;  // 住址
 	private String mobile; // 手机号
-	private Integer age;    // 年龄
 	private String gender;   // 性别
 	private String email; // 邮箱
-    private String education; // 学历
     private Date birthday; // 生日
-    private String postalCode; // 邮编
-    private String regIp; // 注册时IP
     private Integer accountEnabled; // 帐号是否可用
     private Integer accountExpired; // 帐号是否过期
     private Integer accountLocked; // 帐号是否锁定
-	private Date lastLoginTime; // 最后登陆时间
     private PageEx pageEx;   //分页工具
 
     public Integer getId() {
@@ -80,14 +75,6 @@ public class User implements Serializable{
         this.mobile = mobile;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public String getGender() {
         return gender;
     }
@@ -104,36 +91,12 @@ public class User implements Serializable{
         this.email = email;
     }
 
-    public String getEducation() {
-        return education;
-    }
-
-    public void setEducation(String education) {
-        this.education = education;
-    }
-
     public Date getBirthday() {
         return birthday;
     }
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-    }
-
-    public String getRegIp() {
-        return regIp;
-    }
-
-    public void setRegIp(String regIp) {
-        this.regIp = regIp;
     }
 
     public Integer getAccountEnabled() {
@@ -160,14 +123,6 @@ public class User implements Serializable{
         this.accountLocked = accountLocked;
     }
 
-    public Date getLastLoginTime() {
-        return lastLoginTime;
-    }
-
-    public void setLastLoginTime(Date lastLoginTime) {
-        this.lastLoginTime = lastLoginTime;
-    }
-
     public PageEx getPageEx() {
         return pageEx;
     }
@@ -176,27 +131,15 @@ public class User implements Serializable{
         this.pageEx = pageEx;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", fullName='" + fullName + '\'' +
-                ", address='" + address + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                ", email='" + email + '\'' +
-                ", education='" + education + '\'' +
-                ", birthday=" + birthday +
-                ", postalCode='" + postalCode + '\'' +
-                ", regIp='" + regIp + '\'' +
-                ", accountEnabled=" + accountEnabled +
-                ", accountExpired=" + accountExpired +
-                ", accountLocked=" + accountLocked +
-                ", lastLoginTime=" + lastLoginTime +
-                ", pageEx=" + pageEx +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", username=" + username + ", password="
+				+ password + ", fullName=" + fullName + ", address=" + address
+				+ ", mobile=" + mobile + ", gender=" + gender + ", email="
+				+ email + ", birthday=" + birthday + ", accountEnabled="
+				+ accountEnabled + ", accountExpired=" + accountExpired
+				+ ", accountLocked=" + accountLocked + ", pageEx=" + pageEx
+				+ "]";
+	}
+
 }

@@ -20,7 +20,7 @@ import com.asknico.demo.core.dao.UserMapper;
 import com.asknico.demo.model.entities.User;
 
 @Component
-@Path("users")
+@Path("/users")
 public class UserService {
 	@Autowired
 	private UserMapper userMapper;

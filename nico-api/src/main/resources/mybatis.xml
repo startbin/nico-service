@@ -5,7 +5,7 @@
 	<typeAliases>
 		<!-- <typeAlias alias="PageEx" type="com.bjdr.model.entities.FuzzyQueryParam"/> 模糊查询参数实体类 -->
 		<typeAlias alias="User" type="com.asknico.demo.model.entities.User"/>
-		<typeAlias alias="Account" type="com.asknico.demo.model.entities.Account"/>
+		<!-- <typeAlias alias="Account" type="com.asknico.demo.model.entities.Account"/> -->
 	</typeAliases>
 
 	<!-- 配置Mapper  -->

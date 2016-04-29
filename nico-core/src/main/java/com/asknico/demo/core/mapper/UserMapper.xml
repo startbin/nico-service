@@ -3,8 +3,24 @@
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.asknico.demo.core.dao.UserMapper">
+	
+	<resultMap type="User" id="userResultMap">
+		 <id property="id" column="id"/>
+		 <result property="username" column="username"/>
+		 <result property="password" column="password"/>
+		 <result property="fullName" column="full_name"/>
+		 <result property="address" column="address"/>
+		 <result property="mobile" column="mobile"/>
+		 <result property="gender" column="gender"/>
+		 <result property="email" column="email"/>
+		 <result property="birthday" column="birthday"/>
+		 <result property="accountEnabled" column="account_enabled"/>
+		 <result property="accountExpired" column="account_expired"/>
+		 <result property="accountLocked" column="account_locked"/>
+	</resultMap>
+	
 
-	<select id="getUsers" resultType="User">
+	<select id="getUsers" resultMap="userResultMap">
 		SELECT * FROM an_user LIMIT 10
 	</select>
 
